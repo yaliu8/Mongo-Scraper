@@ -1,17 +1,22 @@
-body {
-  background-image: url("/assets/images/background.jpg");
-  padding-top: 70px;
+.jumbotron {
+  background: url("/assets/images/background.jpeg") no-repeat center center;
 }
 
-.deleteNote {
-display: inline-block;
+.display-4 {
+  font-size: 60px;
+  font-weight: bolder;
 }
 
-.previousNotes {
-  display: inline-block;
-  width: 90%
+.lead {
+  font-size: 40px;
+  font-weight: bolder;
 }
 
-#scrape {
-  margin: 8px 0px;
+.btn-primary {
+  background-color: #345c43;
+  color: white !important;
+}
+
+.note-item-list {
+  padding: 5px;
 }
