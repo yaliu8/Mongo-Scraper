@@ -1,0 +1,28 @@
+{
+  "name": "mongo-scraper",
+  "version": "1.0.0",
+  "description": "## Overview The mongo-scraper app is a web app that scrapes articles from the New York website and lets users save articles, read articles, leave comments, remove comments and delete articles. This is a fully functioning CRUD app built according to an MVC model.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaliu8/Mongo-Scraper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaliu8/Mongo-Scraper/issues"
+  },
+  "homepage": "https://github.com/yaliu8/Mongo-Scraper#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "eslint": "^5.0.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.1.6",
+    "request": "^2.87.0"
+  }
+}
