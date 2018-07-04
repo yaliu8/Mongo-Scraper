@@ -16,16 +16,16 @@ app.use(bodyParser.json({
   type: "application/json"
 }));
 
-// serve the public directory
+// public directory
 app.use(express.static("public"));
 
-// Connect to the database
+// Connect to database
 var databaseUrl = "news";
 mongoose.Promise = Promise; 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news";
-mongoose.connect(MONGODB_URI);
+mongoose.connect("mongodb://heroku_g4thnzvl:4s74uoe29gkmqfu0tv9n5qi0q6@ds217671.mlab.com:17671/heroku_g4thnzvl");
 
-// use handlebars
+// routes and handlebars
 app.engine("handlebars", exphbs({
   defaultLayout: "main"
 }));
@@ -34,9 +34,7 @@ app.set("view engine", "handlebars");
 // Hook mongojs configuration to the db variable
 var db = require("./models");
 
-// get all articles from the database that are not saved
 app.get("/", function(req, res) {
-
   db.Article.find({
       saved: false
     },
@@ -90,13 +88,11 @@ app.get("/saved", function(req, res) {
       saved: true
     })
     .then(function(dbArticle) {
-      // if successful, then render with the handlebars saved page
       res.render("saved", {
         articles: dbArticle
       })
     })
     .catch(function(err) {
-      // If an error occurs, send the error back to the client
       res.json(err);
     })
 
